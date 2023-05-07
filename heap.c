@@ -23,6 +23,7 @@ void* heap_top(Heap* pq)
   {
     return NULL;
   }
+  return pq->heapArray->data;
   return NULL;
 }
 
