@@ -36,4 +36,5 @@ Heap* createHeap()
 {
   Heap* prioridad = (Heap*) malloc(sizeof(Heap));
   prioridad->size = 0;
+  return NULL;
 }
