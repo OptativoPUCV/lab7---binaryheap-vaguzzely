@@ -34,7 +34,10 @@ void heap_pop(Heap* pq){
 
 Heap* createHeap()
 {
-  Heap* prioridad = (Heap*) malloc(sizeof(Heap));
-  prioridad->size = 0;
-  return NULL;
+  Heap* prioridadCola = (Heap*) malloc(sizeof(Heap));
+  prioridadCola->size = 0;
+  prioridadCola->capac = 3;
+  prioridadCola->heapArray = (heapElem*) malloc(prioridadCola->capac * sizeof(heapElem));
+  return prioridadCola;
+  
 }
