@@ -84,3 +84,38 @@ heap.c:39:12: error: unused variable ‘nuevoElem’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 7cfd922
+Mon 08 May 2023 12:08:14 AM UTC: 
+ heap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:42:17: error: invalid operands to binary && (have ‘int’ and ‘heapElem’ {aka ‘struct nodo’})
+   42 |   for ( aux > 0 && pq->heapArray[(aux-aux)/2]).priority < nuevoElem->priority; aux = (aux-aux)/2)
+      |         ~~~~~~~ ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             |                   |
+      |             int                 heapElem {aka struct nodo}
+heap.c:42:46: error: expected ‘;’ before ‘)’ token
+   42 |   for ( aux > 0 && pq->heapArray[(aux-aux)/2]).priority < nuevoElem->priority; aux = (aux-aux)/2)
+      |                                              ^
+      |                                              ;
+heap.c:42:46: error: expected expression before ‘)’ token
+heap.c:42:47: error: expected expression before ‘.’ token
+   42 |   for ( aux > 0 && pq->heapArray[(aux-aux)/2]).priority < nuevoElem->priority; aux = (aux-aux)/2)
+      |                                               ^
+heap.c:42:3: error: this ‘for’ clause does not guard... [-Werror=misleading-indentation]
+   42 |   for ( aux > 0 && pq->heapArray[(aux-aux)/2]).priority < nuevoElem->priority; aux = (aux-aux)/2)
+      |   ^~~
+heap.c:42:80: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   42 |   for ( aux > 0 && pq->heapArray[(aux-aux)/2]).priority < nuevoElem->priority; aux = (aux-aux)/2)
+      |                                                                                ^~~
+heap.c:42:97: error: expected ‘;’ before ‘)’ token
+   42 |   for ( aux > 0 && pq->heapArray[(aux-aux)/2]).priority < nuevoElem->priority; aux = (aux-aux)/2)
+      |                                                                                                 ^
+      |                                                                                                 ;
+heap.c:42:97: error: expected statement before ‘)’ token
+heap.c:39:12: error: unused variable ‘nuevoElem’ [-Werror=unused-variable]
+   39 |   heapElem nuevoElem = {data, priority};
+      |            ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fc57810
