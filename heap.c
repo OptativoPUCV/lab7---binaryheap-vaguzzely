@@ -78,8 +78,6 @@ void heapifyHaciaAbajo(Heap* pq, int aux)
 }
 
 
-
-
 //extraer el elemento con mayor prioridad del heap
 //heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
 void heap_pop(Heap* pq)
@@ -94,7 +92,7 @@ void heap_pop(Heap* pq)
   pq->heapArray[pq->size - 1] = temporal;
 
   pq->size--;
-  heapifyHaciaAbajo(pq, 0);
+  heapifyHaciaAbajo(pq, aux);
 }
 
 

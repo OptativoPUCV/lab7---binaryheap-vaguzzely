@@ -453,3 +453,14 @@ Mon 08 May 2023 01:49:02 AM UTC:
  tests:  8|0
 total_score: 70/70
 0a91203
+Mon 08 May 2023 01:49:37 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:95:25: error: ‘aux’ undeclared (first use in this function)
+   95 |   heapifyHaciaAbajo(pq, aux);
+      |                         ^~~
+heap.c:95:25: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+6cf133b
