@@ -52,6 +52,32 @@ void heap_push(Heap* pq, void* data, int priority)
   pq->heapArray[aux] = nuevoElem;
 }
 
+void heapifyHaciaAbajo(Heap* pq, int aux)
+{
+  int izq = 2 * aux + aux;
+  int der = 2 * aux + 2;
+  int mayor = aux;
+
+  if(izq < pq->size && pq->heapArray[izq].priority > pq->heapArray[mayor].priority)
+  {
+    mayor = izq;
+  }
+  if(der < pq->size && pq->heapArray[der].priority > pq->heapArray[mayor].priority)
+  {
+    mayor = der;
+  }
+  if(mayor != aux)
+  {
+    heapElem temporal = pq->heapArray[aux];
+    pq->heapArray[aux] = pq->heapArray[mayor];
+    pq->heapArray[mayor] = temporal;
+    heapifyHaciaAbajo(pq, mayor); //llamada recursiva a la misma función para seguir verificando y corrigiendo la propiedad del montículo en el subárbol que se encuentra debajo del elemento que se acaba de intercambiar.
+  }
+}
+
+
+
+
 //extraer el elemento con mayor prioridad del heap
 //heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
 void heap_pop(Heap* pq)
@@ -60,6 +86,7 @@ void heap_pop(Heap* pq)
   {
     return NULL;
   }
+  
   return NULL;
 }
 
