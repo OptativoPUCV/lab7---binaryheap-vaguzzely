@@ -86,7 +86,7 @@ void heap_pop(Heap* pq)
 {
   if(pq->size == 0)
   {
-    return NULL;
+    return;
   }
 
   heapElem temporal = pq->heapArray[0];
