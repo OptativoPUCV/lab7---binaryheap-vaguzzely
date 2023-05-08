@@ -70,3 +70,17 @@ Sun 07 May 2023 11:38:59 PM UTC:
  tests:  2|2
 total_score: 20/70
 8a8220e
+Mon 08 May 2023 12:03:36 AM UTC: 
+ heap.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:41:7: error: unused variable ‘aux’ [-Werror=unused-variable]
+   41 |   int aux = pq-> size++;
+      |       ^~~
+heap.c:39:12: error: unused variable ‘nuevoElem’ [-Werror=unused-variable]
+   39 |   heapElem nuevoElem = {data, priority};
+      |            ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7cfd922
