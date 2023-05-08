@@ -37,13 +37,14 @@ void heap_push(Heap* pq, void* data, int priority)
   }
   
   heapElem nuevoElem = {data, priority};
-
-  int aux = pq-> size++;
-  for ( aux > 0 && pq->heapArray[(aux-aux)/2].priority < nuevoElem.priority; aux = (aux-aux)/2{}
-
   
-  
-  
+  int aux = pq->size++; 
+  while(aux > 0 && pq->heapArray[(aux - 1) / 2].priority < nuevoElem.priority)
+  {
+    pq->heapArray[aux] = pq->heapArray[(aux - 1) / 2];
+    aux = (aux - 1) / 2; // se actualiza el índice del hijo
+  }
+    pq->heapArray[aux] = nuevoElem;
   
   
   
