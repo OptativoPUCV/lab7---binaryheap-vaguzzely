@@ -33,6 +33,7 @@ void heap_push(Heap* pq, void* data, int priority)
 {
   if(pq->size == pq->capac)
   {
+    pq->capac = pq->capac * 2 + 1;
     pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem));
   }
   
@@ -44,12 +45,7 @@ void heap_push(Heap* pq, void* data, int priority)
     pq->heapArray[aux] = pq->heapArray[(aux - 1) / 2];
     aux = (aux - 1) / 2; // se actualiza el índice del hijo
   }
-    pq->heapArray[aux] = nuevoElem;
-  
-  
-  
-  
-
+  pq->heapArray[aux] = nuevoElem;
 }
 
 
