@@ -56,6 +56,11 @@ void heap_push(Heap* pq, void* data, int priority)
 //heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
 void heap_pop(Heap* pq)
 {
+  if(pq->size == 0)
+  {
+    return NULL;
+  }
+  
 
 }
 
