@@ -60,8 +60,7 @@ void heap_pop(Heap* pq)
   {
     return NULL;
   }
-  
-
+  return NULL;
 }
 
 
