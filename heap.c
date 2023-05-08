@@ -92,7 +92,7 @@ void heap_pop(Heap* pq)
   pq->heapArray[pq->size - 1] = temporal;
 
   pq->size--;
-  heapifyHaciaAbajo(pq, aux);
+  heapifyHaciaAbajo(pq, 0);
 }
 
 
