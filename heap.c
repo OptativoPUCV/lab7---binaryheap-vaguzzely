@@ -89,7 +89,11 @@ void heap_pop(Heap* pq)
     return NULL;
   }
 
-  heapElem temporal = pq->heapAr
+  heapElem temporal = pq->heapArray[0];
+  pq->heapArray[0] = pq->heapArray[pq->size - 1];
+  pq->heapArray[pq->size - 1] = temporal;
+
+  pq->size--;
 }
 
 
