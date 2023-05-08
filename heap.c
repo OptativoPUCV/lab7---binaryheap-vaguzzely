@@ -56,8 +56,8 @@ void heap_push(Heap* pq, void* data, int priority)
 //para mantener la propiedad del montículo después de eliminar el mayor elemento (la raíz). La función se encarga de mover el último elemento del montículo a la raíz y hacer que este elemento baje en el árbol binario de manera adecuada, es decir, comparándolo con sus hijos y haciendo intercambios si es necesario hasta que el árbol vuelva a cumplir con la propiedad del montículo.
 void heapifyHaciaAbajo(Heap* pq, int aux)
 {
-  int izq = 2 * aux + 1;
   int der = 2 * aux + 2;
+  int izq = 2 * aux + 1;
   int mayor = aux;
 
   if(izq < pq->size && pq->heapArray[izq].priority > pq->heapArray[mayor].priority)
