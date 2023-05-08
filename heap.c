@@ -16,6 +16,8 @@ typedef struct Heap{
   int capac;
 } Heap;
 
+//el montículo binario no me sirve mucho para buscar y no me mantiene los datos ordenados, su principal función es para acceder al mayor, la inserción O(1)también es más rápida y la eliminación es similar
+
 //La función heap_top devuelve el dato con la mayor prioridad (el elemento con la raíz del montículo). en la primera casilla del arreglo.
 //heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
 
@@ -33,6 +35,7 @@ void* heap_top(Heap* pq)
 /*El push inserta un nuevo elemento en el montículo en la siguiente posición disponible, es decir, al final del arreglo. Luego, el algoritmo "percola hacia arriba" el elemento insertado para asegurarse de que esté en la posición adecuada para mantener la propiedad del montículo.
 
 Mantener la propiedad del montículo significa que se mantiene la estructura del montículo binario completo, donde cada nodo padre tiene un valor de prioridad mayor o igual que sus hijos. En otras palabras, se asegura que el elemento con la máxima prioridad siempre esté en la raíz del árbol. Al insertar un nuevo elemento, se reorganiza la estructura del montículo para que esta propiedad se mantenga. */
+//O(logn)
 void heap_push(Heap* pq, void* data, int priority)
 {
   if(pq->size == pq->capac)
@@ -51,7 +54,6 @@ void heap_push(Heap* pq, void* data, int priority)
   }
   pq->heapArray[aux] = nuevoElem;
 }
-
 
 //para mantener la propiedad del montículo después de eliminar el mayor elemento (la raíz). La función se encarga de mover el último elemento del montículo a la raíz y hacer que este elemento baje en el árbol binario de manera adecuada, es decir, comparándolo con sus hijos y haciendo intercambios si es necesario hasta que el árbol vuelva a cumplir con la propiedad del montículo.
 void heapifyHaciaAbajo(Heap* pq, int aux)
@@ -80,6 +82,7 @@ void heapifyHaciaAbajo(Heap* pq, int aux)
 
 //extraer el elemento con mayor prioridad del heap
 //heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
+//siempre se elimina el de la raíz
 void heap_pop(Heap* pq)
 {
   if(pq->size == 0)
