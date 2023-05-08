@@ -16,6 +16,8 @@ typedef struct Heap{
   int capac;
 } Heap;
 
+//La función heap_top devuelve el dato con la mayor prioridad (el elemento con la raíz del montículo). en la primera casilla del arreglo.
+//heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
 
 void* heap_top(Heap* pq)
 {
@@ -28,7 +30,9 @@ void* heap_top(Heap* pq)
 }
 
 
+/*El push inserta un nuevo elemento en el montículo en la siguiente posición disponible, es decir, al final del arreglo. Luego, el algoritmo "percola hacia arriba" el elemento insertado para asegurarse de que esté en la posición adecuada para mantener la propiedad del montículo.
 
+Mantener la propiedad del montículo significa que se mantiene la estructura del montículo binario completo, donde cada nodo padre tiene un valor de prioridad mayor o igual que sus hijos. En otras palabras, se asegura que el elemento con la máxima prioridad siempre esté en la raíz del árbol. Al insertar un nuevo elemento, se reorganiza la estructura del montículo para que esta propiedad se mantenga. */
 void heap_push(Heap* pq, void* data, int priority)
 {
   if(pq->size == pq->capac)
@@ -48,12 +52,16 @@ void heap_push(Heap* pq, void* data, int priority)
   pq->heapArray[aux] = nuevoElem;
 }
 
-
+//extraer el elemento con mayor prioridad del heap
+//heap_pop devuelve y elimina el elemento de mayor prioridad del montículo
 void heap_pop(Heap* pq)
 {
 
 }
 
+
+/*Esta función crea un nuevo dato de tipo Heap inicializando sus variables. Considere que la capacidad incial es de 3 casillas para el arreglo.
+   > Recuerde reservar memoria para el Heap y también para el arreglo `heapArray`.*/
 Heap* createHeap()
 {
   Heap* colaDePrioridad = (Heap*) malloc(sizeof(Heap));
